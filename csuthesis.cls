@@ -239,7 +239,14 @@
 % \RequirePackage{amssymb}
 % \RequirePackage{bm}
 % 使用 \pkg{unicode-math} 处理数学字体
-\RequirePackage{unicode-math}
+% \RequirePackage{unicode-math}
+
+%使用unicode-math输出的公式不是New Times Roman字体，采用mathptmx字库输出的公式字体更接近New Times Roman字体
+\RequirePackage{amsmath,amssymb,amsfonts,mathrsfs,bm}
+\usepackage{mathptmx}
+\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
+\DeclareSymbolFont{largesymbols}{OMX}{cmex}{m}{n}
+\setmainfont{Times New Roman}
 % 算法排版宏包
 \RequirePackage[chapter]{algorithm}
 \RequirePackage{algorithmic}
@@ -517,12 +524,12 @@
   ]%
 }
 % 使用 \pkg{unicode-math} 配置数学字体。
-\unimathsetup{
-  math-style = ISO,
-  bold-style = ISO,
-  nabla      = upright,
-  partial    = upright,
-}
+% \unimathsetup{
+%   math-style = ISO,
+%   bold-style = ISO,
+%   nabla      = upright,
+%   partial    = upright,
+% }
 \newcommand\csu@set@math@font@xits{%
   \csu@font@set@xits@names
   \setmathfont{\csu@font@name@xits@math@rm}[
@@ -633,7 +640,7 @@
 % latinfontset 是csu的key 使用 对应的kv接口调用  现在没有实现
 % \csu@load@fontset@latinfontset
 % Windows系统请使用 times 字体集
-\csu@load@fontset@times
+% \csu@load@fontset@times
 % linux系统请使用 stix 字体集
 % \csu@load@fontset@stix
 % \csu@option@hook{csu}{latinfontset}{%
