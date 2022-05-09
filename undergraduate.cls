@@ -34,7 +34,7 @@
 % 设置页眉和页脚 %
 \pagestyle{fancy}
 % 本科学位论文底部样式
-\newcommand{\csu@thepage@format@zh}[2]{第~{#1}~页 共~{#2}~页}
+\newcommand{\csu@thepage@format@zh}[2]{第~{#1}~页\quad 共~{#2}~页} %第页 共页之间有一个空格
 \newcommand{\csu@thepage@format@en}[1]{#1}
 % 空白页清空页眉页脚
 \patchcmd{\cleardoublepage}{\newpage}{\thispagestyle{empty}\newpage}{}{}
